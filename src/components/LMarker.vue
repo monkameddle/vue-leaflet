@@ -93,7 +93,15 @@ export default defineComponent({
       nextTick(() => context.emit("ready", leafletObject.value));
     });
 
-    onBeforeUnmount(() => cancelDebounces(eventHandlers));
+    onBeforeUnmount(() => {
+      cancelDebounces(eventHandlers)
+
+      if (leafletObject.value?.isPopupOpen()) {
+        console.debug('Closing open popup')
+        leafletObject.value.closePopup();
+      }
+
+    });
 
     return { ready, leafletObject };
   },
