@@ -94,13 +94,13 @@ export default defineComponent({
     });
 
     onBeforeUnmount(() => {
-      cancelDebounces(eventHandlers)
-
+      console.debug("Closing open popup x1");
+      cancelDebounces(eventHandlers);
+      console.debug("Closing open popup y1");
       if (leafletObject.value?.isPopupOpen()) {
-        console.debug('Closing open popup')
+        console.debug("Closing open popup");
         leafletObject.value.closePopup();
       }
-
     });
 
     return { ready, leafletObject };

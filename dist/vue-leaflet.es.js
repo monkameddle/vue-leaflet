@@ -1467,7 +1467,7 @@ const $t = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
       }), n.value = !0, g(() => o.emit("ready", e.value));
     }), R(() => {
       var u;
-      ye(i), (u = e.value) != null && u.isPopupOpen() && (console.debug("Closing open popup"), e.value.closePopup());
+      console.debug("Closing open popup x1"), ye(i), console.debug("Closing open popup y1"), (u = e.value) != null && u.isPopupOpen() && (console.debug("Closing open popup"), e.value.closePopup());
     }), { ready: n, leafletObject: e };
   },
   render() {
